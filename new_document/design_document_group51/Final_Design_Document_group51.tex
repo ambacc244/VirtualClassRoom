@@ -1,0 +1,222 @@
+\documentclass[10pt]{article}
+
+\usepackage[singlespacing]{setspace}
+\usepackage[letterpaper,margin=0.75in]{geometry}
+
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\fancyfoot[C]{Page \thepage\ of \pageref{LastPage}}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+
+\begin{document}
+\pagenumbering{gobble}
+\begin{titlepage}
+    \title{Final Design Document}
+    \author{Yeongae Lee, Jaehyung You \\ CS 463  \\ Oregon State University \\ Spring 2019 \\ \\ Project Physics Virtual Classroom: AsyncSync (Group 51) \\by Physics Department \\Dr. Kenneth Walsh}
+    \date {April 19, 2019}
+
+
+    \maketitle
+        \begin{abstract}
+
+        We will work on building Physics the Virtual Classroom page for giving a better learning environment for physics students. The following document describes the design and structure of the Physics Virtual Classroom project, the purpose, and scope of the document and the intended audience. This document also covers concerns and constraints that may happen during the development. Furthermore, the document uses diagrams to detail the interaction between the users and the Physics Virtual Classroom website. This design document isn't only made for our project team, but it is also made for the next project team, who will work on the project after our team.
+
+        \end{abstract}
+
+\end{titlepage}
+\newpage
+
+\pagenumbering{arabic}
+
+\section{Overview}
+    The Physics Virtual Classroom is a web-based application that is real-time collaborative software in the form of an interactive whiteboard. The website will have the section, which allows students to take a lecture when they’re online, and the application. The application will allow multiple users to share an online whiteboard on which they will be able to draw shapes, and objects, write equations, share ideas and communicate. Physics Virtual Classroom will permit users to simultaneously edit a single work-space (similar to Google Docs), record everything drawn or written on the whiteboard and allow the users to communicate. Physics Virtual Classroom is intended to replace the current online lecture system used by introductory physics students at Oregon State University (OSU). Physics virtual Classroom uses live lecture rather than recorded lecture, so students allow asking questions to professors during lectures. In addition, by adding group activities in the middle of the lecture, students can actively participate in lectures. The current project is to make a solid website with some functionalities, and the next project teams will continue to develop. This document will be a great guide document for the whole project team.
+
+    \subsection{Purpose}
+       The purpose of this document is to provide a description of the design and structure of the Physic Virtual Classroom and how users will interact with the system. The document will guide us on how the whole structure of the website looks like. Furthermore, this document will be used by the development team as a framework to begin implementing the software.
+
+    \subsection{Scope}
+        The scope of this document includes the structure and design of the Physics Virtual Classroom software and covers the user interactions with the software. This document does not cover in-depth detail of the technologies being used to implement the software. It will cover the general structure of the website.
+
+    \subsection{Audience}
+        Primarily, this document is intended for the AsyncSync development team that will be creating the software and the stakeholder, Kenneth Walsh. Additionally, the document is meant for future developers that will continue building upon this software in the years to come to help them understand the original design and implementation of the software.
+
+\section{Definitions}
+    \begin{itemize}
+        \item AsyncSync: shorten for Asynchronized Synchronization. It is the name of our team, and the key word for the project.
+        \item AWW: A Web Whiteboard, the whiteboard API
+        \item Physics Virtual Classroom: the name of the website.
+        \item BoxSand: a website created by the Physics department at Oregon State University to replace textbooks with free learning material.
+        \item Drupal: Content Management System. It will be used for our primary development environment.
+        \item Break-out session: Session that students will work on the whiteboard.
+    \end{itemize}
+
+\newpage
+\section{UML and ERD}
+    \subsection{Entire Project UML}
+        \begin{itemize}
+            \item Student: User
+            \item Canvas: Users can access courses after login into Canvas. They can check course modules and get lecture materials. Also, they can submit assignments and check grades.
+            \item BoxSand: BoxSand includes learning materials. It provides textbooks, lecture videos, and other resources. Users can access BoxSand website thorough Canvas, so they can access to BoxSand learning materials.
+            \item Physics Virtual Classroom: This is the online lecture page. Instructors upload YouTube Live lectures on this page. Students take live lectures.
+            \item Physics Virtual Classroom Database: Lecture contents are saved in this database.
+            \item AWW Whiteboard: It provides a shared whiteboard to students during live lectures.
+            \item Instructor database: Canvas data is saved in here. Instructors can check students grades and works. Whiteboard tracking report is also saved in this database.
+            \item Tracking: It converts whiteboard information into tracking reports and then sends it to the instructor database.
+        \end{itemize}
+
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=0.8\textwidth]{{UML1}}
+            \caption{Entire Project UML}
+        \end{figure}
+    \newpage
+    \subsection{Entire Project ERD}
+        \begin{itemize}
+            \item Student: A student has a unique user ID and password.
+            \item Login Database: If a user ID and password match, a student can access to courses.
+            \item Canvas: Canvas is the hub of the data exchange.
+            \item BoxSand: BoxSand send and receive course materials and user information from Canvas
+            \item Physics Virtual Classroom: This sends and receives lecture contents from Physic Virtual Classroom Database.
+            \item Physics Virtual Classroom Database: This database includes lecture contents.
+            \item AWW Whiteboard: It provides whiteboards to Physics Virtual Classroom.
+            \item Instructor database: It contains Canvas data. Whiteboard tracking reports are also saved in here.
+            \item Tracking: It receives whiteboard and then converts to tracking reports.
+        \end{itemize}
+
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=0.8\textwidth]{{ERD1}}
+            \caption{Entire Project ERD}
+        \end{figure}
+
+    \newpage
+    \subsection{Physics Virtual Classroom UML}
+        \begin{itemize}
+            \item Physics Virtual Classroom: This is the online live lecture page. Instructors upload YouTube Live lectures on this page. Students take lectures and work on questions together during lectures.
+            \item Physics Virtual Classroom Database: Lecture contents are saved in this database. Physics Virtual Classroom page loads lectures from this database when students access to the web
+            \item AWW Whiteboard: It provides a shared whiteboard to students during live lectures.
+        \end{itemize}
+
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=0.8\textwidth]{{UML2}}
+            \caption{Physics Virtual Classroom UML}
+        \end{figure}
+
+    \subsection{Physics Virtual Classroom ERD}
+        \begin{itemize}
+            \item Physics Virtual Classroom: This is a web page which students take live lectures.
+            \item Physics Virtual Classroom Database: Database saves entries web page information. Not only lecture contents but also structure, theme, modules, and configuration are saved on it.
+            \item AWW Whiteboard: AWW provides whiteboards to Physics Virtual Classroom. Students write and draw something during the lecture activity session.
+        \end{itemize}
+
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=0.7\textwidth]{{ERD2}}
+            \caption{Physics Virtual Classroom ERD}
+        \end{figure}
+
+\newpage
+\section{Interface and Functionality}
+    \subsection{Load the Physics Virtual Classroom Page}
+        Students can access to Physics Virtual Classroom page by URL. Web recognizes access. Then query data from Physics Virtual Classroom database which is a MySQL database. Web Structure, appearance, and configuration are saved on a MySQL database. Web gets this information to build the Physic Virtual Classroom page. Then return this page to students.
+
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=0.7\textwidth]{{SD_Load}}
+            \caption{Sequence Diagram: Load the Physics Virtual Classroom Page}
+        \end{figure}
+
+    \subsection{Add a live lecture}
+        Instructor fills out the lecture content from. Then, he clicks the save button. Physics Virtual Classroom page sends this content to the database. This data is saved into a MySQL database. Database sends web page data to the Physics Virtual Classroom page. Then, the page is reloaded. Instructors and students can see added lecture.
+
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=0.7\textwidth]{{SD_Add}}
+            \caption{Sequence Diagram: Add a live lecture}
+        \end{figure}
+
+    \subsection{Load a Whiteboard}
+        Physics Virtual Classroom page query a whiteboard to AWW Whiteboard during live lectures. Then, AWW Whiteboard returns a whiteboard.
+
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=0.4\textwidth]{{SD_WB}}
+            \caption{Sequence Diagram: Load a Whiteboard}
+        \end{figure}
+
+
+\section{Database}
+    The database is going to be an integral part of the software because our main goal is to enable the instructors to schedule lectures on the Physics Virtual Classroom website and allow students to watch lectures. The information of the lectures that the instructors uploaded should be moved to the backend and stored in the database. This website will be created on the Drupal server. Drupal uses MySQL as the database, so the information of the lecture input must be stored in the MySQL database. The data will be stored in a related table so when students access the Physics Virtual Classroom website, the server will load the data.
+
+
+\section{Concerns and Constraints}
+    \subsection{Using a new framework as our development environment.}
+        We will use Drupal as our development environment. It was a suggestion of our head programmer. Due to the code, we had from another development team, had some issues, we were unable to continue working with the code. Therefore, our head programmer suggested Drupal. Drupal is an open-source CMS (Content Management System). There are several powerful advantages to using Drupal in our development environment. Mostly, other developers, who aren’t student developers, but full-time developers, in the Physics Virtual Classroom have been working with Drupal. So, they can maintain and work on this project once our part of the project is done. However, our team hasn’t used Drupal before, so we expect it will take time to learn. Moreover, in general, Drupal is unstable when is under development at times. This is due to the environment of Drupal. The developers can add modules to Drupal (which means you can add some functionalities to the website), but not all module guarantee compatibility with each other. Therefore, we need to work on adding modules locally first, and we can proceed if the job is safe to do. To sum it up, we expect there will be some learning curves to know how to develop the website by Drupal.
+
+    \subsection{Some limitations on the whiteboard.}
+        Students will have a couple of break-out sessions while they are taking lectures. They will go to the whiteboard and work with some of the other students. However, since the number of students, who will be taking the course, will be more than 100, the whiteboard will be needed many. We are thinking of each whiteboard has 4-5 students, and this will be the primary concerns of project teams, who will work on the project after our project is finished. Our system will have only one whiteboard even if 100 students are taking one lecture. To resolve this issue, we need to figure out how we can control users by their account. We will build to see the list of current users so that the next project team can work on this smoothly.
+
+    \subsection{Server Management}
+        Our server will be running on Ubuntu. We expect more than 200 students will use the website at the same time. Therefore, it is important to ensure that the server is running reliably.
+
+    \subsection{Security \& other concerns}
+        The goal of the whole project is to make a website that will help students to learn Physics a better and efficient way. Therefore, the website may be able to connect to Canvas, which is mostly used by students at Oregon State University. In that case, we should consider security as the primary concerns. More, we’ll use the student’s information in our database, so we need to take care of their sensitive data well.
+
+ \section{Conclusion }
+    In conclusion, the Physics Virtual Classroom project is a web software which allows students to collaborate in real-time. It lets students communicate online by offering a web-based chatting system. The whole website divides into three design parts which are the main page, the lecture page, and the whiteboard page. The main page will have a calendar that will show each lecture when is due. The lecture page will show the list of lectures and its descriptions. The whiteboard page will load the API from AWW. Students will go back and forth between a lecture session and a break-out session. Every lecture will be offered in live, and students may be able to re-take whenever they need to. Physics Virtual Classroom is the new style of the education program. It will replace the online physics assignment system. The virtual classroom project is expected to improve student learning efficiency.
+
+ \section{Gantt Chart}
+    \begin{figure}[!ht]
+    \centering
+        \includegraphics[width=0.8\textwidth]{{chart}}
+        \caption{Gantt Chart (2018 Fall Term)}
+    \end{figure}
+
+     \begin{figure}[!ht]
+    \centering
+        \includegraphics[width=0.8\textwidth]{{chart2}}
+        \caption{Gantt Chart (2018 Winter Term)}
+
+    \end{figure}
+    \begin{figure}[!ht]
+    \centering
+        \includegraphics[width=1.0\textwidth]{{chart3}}
+        \caption{Gantt Chart (2019 Spring Term)}
+    \end{figure}
+\end{document}

@@ -1,0 +1,179 @@
+\documentclass[10pt, letterpaper]{article}
+
+\usepackage[singlespacing]{setspace}
+\usepackage[letterpaper,margin=0.75in]{geometry}
+
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\fancyfoot[C]{Page \thepage\ of \pageref{LastPage}}
+
+\usepackage{listings}
+\usepackage{color}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=mystyle}
+
+
+
+\begin{document}
+\pagenumbering{gobble}
+\begin{titlepage}
+    \title{Winter Term Progress Report}
+    \author{Yeongae Lee, Jaehyung You \\ CS 462  \\ Oregon State University \\ Winter 2018 \\ \\ Project BoxSand: AsyncSync (Group 51) \\by Physics Department \\ Kenneth Walsh}
+    \date {March 19, 2019}
+
+  
+    \maketitle
+        \begin{abstract}
+       The project BoxSand has already replaced the traditional education and textbook with online environment for saving students’ tremendous money. The BoxSand is a project that is initiated by the Physics department at Oregon State University. We, Group 51, are currently working on building an online shared whiteboard for giving a better learning environment for Physics students. This report includes the purposes, the left things, the problems and solutions, snippets of code, and the main goal of the project. Now, the basic whiteboard is already implemented, and the lobby-session and the live-session is working as expected. We expect most features to be implemented properly before the end of the term. Our final goal of the project is making this site more functional and intuitive. Therefore, students, who is studying Physics and will study Physics, can have a better educational experience.
+        \end{abstract}     
+\end{titlepage}
+\newpage
+
+\pagenumbering{arabic}
+\section{Purposes}
+    The project has been done with the Ecampus on the Physics department at Oregon State University. BoxSand is an online learning tool created by the Department of Physics at OSU. (Website URL: https://boxsand.physics.oregonstate.edu/). The website is designed to give students a better and more advanced educational environment. The purpose of our project is to help physics students to study in a better educational environment, and physics professors can get better data from students so that they can make better quality educational material to their students. In detail, our goal is to create an online shared whiteboard so that students can take classes online and work with other students while taking online classes. The main purpose of the project is to bring students their work online and collaborate with other students while they are studying online. Students can have easy access to their learning or studying materials, and students are expected to get faster and better feedback from the professors.
+
+
+
+\section{Goals}
+    The main goal of the project is building a website that allows students to study and take physics classes while they are online. The main structure of the website will be the lobby, the live session (or lectures), and the whiteboard. The lobby allows students to see who is online, and the calendar will show the date when the lectures are due. On the lecture session, students will see the lecture via YouTube. During the lecture, students will be invited to work with other students by professor. This will be happened about 4 or 5 times during one lecture. We will call this as a ‘break-out session’. A question which students have to work together shows up on the shared whiteboard. Students can write and draw on the whiteboard. A whiteboard is an open space that students share their idea about questions. After each break-out session is done, students will be out from the whiteboard. This will be repeated 4 or 5 times until the lecture is done. Our ultimate goal for the project is building a fully working website for Physics students, where they can see the lectures and work with other students through the whiteboard. 
+
+\section{What we did?}
+    \subsection{Lobby Page}
+        The lobby is the first page of the Physic virtual classroom. We put the weekly calendar on the lobby page. The big calendar includes lecture schedules. The list of live classes is displayed on it. The calendar is the weekly calendar. The column is the date. The row is time. Classes are located in correct slots. Students just need to click a lecture schedule block on the calendar to join the lecture. The program redirects users to corresponded lecture page. The main purpose of this page is well-organizing lectures, so students can easily to check the lecture schedules. We thought the calendar is the best way to organize lecture schedule, so we decided to make lobby looks like a calendar.
+
+    \subsection{Class Page}
+        The class page also shows the list of classes on the lobby calendar. However, this is a different form. We made two different forms to show class schedules. The one different thing is that this page shows lecture descriptions. Calendar only provides a name of lecture and lecture time. However, it offers the name of the lecture, lecture time and description. This page view is the table view. The table has three columns. The first column is the date and time of the lecture. The second column is the title of the lecture. Then the last column is a description of the lecture. This page is good if students want to briefly see a list of lecture and what lectures are coming up. Students can go the lecture page here too. They just need to click lectures. The program will redirect them to the lecture page.
+        
+    \subsection{Lecture Page}
+        This page is a page for the single lecture. If students click lectures on the lobby or class page, the program redirects them to this page. This is a page for single lectures. Every single lecture has one lecture page. The lecture description and lecture video show up on this page. Students can play video to join the lecture.
+
+    \clearpage
+    \subsection{Link for Whiteboard}
+        There’s a link to AWW (A Web Whiteboard) in the banner. This link directly sends   you to AWW. However, since we haven’t configured how we will implement assigning students to each whiteboard, this link, or any other related link, is experimental. Now, there are two of links are in the banner. One of them shows lists of current whiteboards, and the other will open a whiteboard in a new tab page. 
+        
+\section{What we have left to do?}
+    \subsection{Grouping (method that sends students to the whiteboard in a break-out session)}
+    Grouping is not implemented yet. Grouping will take place over the next three to four weeks. Grouping can be divided into three steps which are dividing users into groups, assigning a whiteboard to each group. The first step is dividing users into groups. Three to five users will make one group. After the live lecture starts, the program gets user information who is taking the lecture. The professor decides when the break-out session would be. The break-out session is set before the lecture starts. Therefore, whenever the time of the break-out session comes, students will be notified. 
+        
+    \subsection{Alternatives for grouping.}
+    
+    First, after we’ve been working on Drupal. We’ve noticed some limitations of using Drupal. First, it seems it isn’t easy to implement using students’ information in a site-wide. In other words, it isn’t easy to exchange values between different contents. The value of each student should keep passing between the live session and the whiteboard session. However, the implementation of this is hard in Drupal. Since we are still adapting to the development environment of Drupal, we may be able to find a solution for this. Depending on the situation, students may go to the whiteboard manually in each whiteboard session.
+    
+    \subsection{Adding some functionality on the site}
+    Since the current site has only some functionality, we are still trying to add more functionality that makes students using the site easy and intuitive. One of feature is going to be making a calendar that shows when the class will be due. Clicking an event on the calendar will redirect a student to the content, if the class is open. Students can access the class only when the class is open. Which is the second functionality that we need to implement for the site. We should lock the content until the class is due. This feature will act like what Canvas does have now. We are focusing those features as our goal, and if our client wants another features on the site, we will try to build those as stretch goals. Since, again, our ultimate goal for the project is building a fully working website, which has a lobby, a live-session, and an whiteboard session, we aim to make the site work properly and make it easy for students to use.
+
+        
+
+\section{Problems and Solutions}
+    \subsection{Using Drupal}
+        The client wants us to use Drupal software to do this project. However, group members were not familiar with this tool, so we had a difficult to figure out how to use this software. Also, Drupal does not have many sources online. The only available source is the document which Drupal provides. Our header programmer has much experience to use Drupal, so we often had meetings with him to get advice when we had difficulties to use it. We will continue to get advice and resolve Drupal issues in the future.
+
+    \subsection{How users join lecture after or during grouping is processing?}
+        We had a problem which how can we put students who join a lecture in the middle into group activities. The customer what us to do break out session at the beginning of lecture. Therefore, if students join the live lecture in the middle, we cannot redirect them to the group whitebeard. Therefore, we talked about this issue with the client. If we do break out session beginning of each the activity, we can put students who join the lecture before the group activity into the group board. However, we are still difficult to redirect students who join in the middle of an activity to the group board. The client wants to do break out session at the beginning of the lecture. Also, he does not want us to treat students who join the lecture late. He just wants to gather students in the lobby before the lecture starts. This problem was solved by coordinating the project with the client. 
+        
+    \subsection{Buggy Physic Virtual Classroom Page}
+        Our original plan was to use e-campus team code to implement the whiteboard function in existing virtual classroom page. However, the sample webpage we got was too buggy. Even if it is buggy, and if e-campus team keep working on fixing bug, we would be able use it as the lobby. However, the e-campus team gave up building the virtual classroom page, so they are not working on fixing bugs. Therefore, we were planned to fix bugs and use the example code as our lobby. However, it was difficult to catch bugs. For that reason, we decide to rebuild the physic virtual classroom page. The problem is because of a lack of communication with the e-campus team, we know that they are not working on it anymore late. Therefore, we started to build a virtual classroom page on week 8. It was a big change because our main goal is changed. Our first goal was adding one function on the existing webpage. However, we are building an entire page. We started late but we spent most of the time during the last three weeks to come up with somewhat result.
+
+\newpage
+\section{Code}
+    \subsection{Whiteboard}
+    
+    \begin{lstlisting}[language=Java, caption=Implementing Whiteboard]
+    <div className={css(styles.awwHold)}>
+        <iframe id='boardID' onLoad={() => this.getURL()} src='https://awwapp.com/b/up7vby0tu'/>
+        <div className={css(styles.sessionBar)}>
+            <div className={css(styles.sessionIdentifier)}>
+                <Link onClick={() => this.onBack()} to={'/'}>
+                    <div style={{ backgroundColor: thisSession.color}}>
+                        <img src={'./assets/img/physics-white-logo.svg'}/>
+                    </div>
+                </Link>
+                <h1 style={{ color: thisSession.color}}>{thisSession.title}</h1>
+            </div>
+            <div className={css(styles.currentView)}>
+                <h3 className={css(styles.currentSubtitle)}>CURRENT VIEW</h3>
+                <h2 className={css(styles.currentTitle)}>GROUP SESSION</h2>
+            </div>
+            <div className={css(styles.rightSide)}>
+                <h4 onClick={() => {this.props.toggleModal(this.props.modal)}}>Rate this experience: </h4>
+                <div className={css(styles.starHold)}>
+                    <img src='./assets/img/star-empty.svg' className={css(styles.star)} />
+                    <img src='./assets/img/star-empty.svg' className={css(styles.star)} />
+                    <img src='./assets/img/star-empty.svg' className={css(styles.star)} />
+                    <img src='./assets/img/star-empty.svg' className={css(styles.star)} />
+                    <img src='./assets/img/star-empty.svg' className={css(styles.star)} />
+                </div>
+            </div>
+        </div>
+    </div>
+    \end{lstlisting}
+        This is code to implement AWW whiteboard. $<$iframe src='URL' /$>$ loads user to URL. Therefore, if the whiteboard URL is located on between apostrophes, it will direct the user to the whiteboard page. The URL\\ 'https://awwapp.com/b/up7vby0tu/' is located between apostrophes. Therefore, the code will direct to AWW whiteboard which has 'up7vby0tu' as id. The code will direct the user to different whiteboard depending on different board ids. This code can only load one whiteboard, but our team will use Drupal to load each group with a different whiteboard. A detailed description of this process will be described in detail in the next project report. Currently, the whiteboard code is embed in one of our content. There are two links for whiteboards. One of them is opening the whiteboard in a new tab, and the other is showing the whiteboard within the site. 
+        \cleardoublepage
+
+\section{Image}
+    \subsection{Lobby page}
+        This is the first page of the Physic virtual classroom. Students can see the calendar. Classes are on the calendar slots. Students can see classes on the calendar. There is a chat room button bottom of the lobby page. Students who are in the lobby now can communicate on the chat.
+        \begin{figure}[!ht]
+        \centering
+            \includegraphics[width=0.8\textwidth]{{Pictures/Lobby}}
+            \caption{Main page (Lobby Page)}
+        \end{figure}
+        
+    \subsection{Class page}
+        Students can access this page clicking class button on the navigation bar. This page shows a list of classes. Students can check upcoming classes and past classes.
+        \begin{figure}[!ht]
+        \centering
+            \includegraphics[width=0.8\textwidth]{{Pictures/Class}}
+            \caption{Live-Session (Class Page)}
+        \end{figure}
+        
+    \subsection{Lecture page}
+        Lecture page includes lecture video. The lecture will be the YouTube live video. Students can play video to join live lecture.
+        \begin{figure}[!ht]
+        \centering
+            \includegraphics[width=0.8\textwidth]{{Pictures/Lecture}}
+            \caption{Live-Session (Lecture Page)}
+        \end{figure}    
+        
+    \subsection{Whiteboard}
+        This is the AWW whiteboard. We will use this whiteboard for group activity. Group members allow drawing something here. AWW provides basic tools which are drawing, eraser, text box, copy, and paste. The advantage of this board is Easy-to-use software with important features only. We chose a simplicity that did not include more functionality than we needed when choosing a whiteboard. The AWW was chosen because it has the functionality that we need for the whiteboard. Now, it only can access by clicking the link in the banner
+        
+        \begin{figure}[!ht]
+        \centering
+            \includegraphics[width=0.6\textwidth]{{Pictures/AWW}}
+            \caption{AWW Whiteboard}
+        \end{figure}
+
+\clearpage
+
+\end{document}

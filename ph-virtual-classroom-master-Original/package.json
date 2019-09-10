@@ -1,0 +1,45 @@
+{
+  "name": "ph-virtual-classroom",
+  "version": "1.0.5",
+  "description": "A virtual classroom experience with breakout sessions.",
+  "main": "index.html",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open ",
+    "hot": "webpack-dev-server --mode development --open --hot ",
+    "silent": "webpack-dev-server --mode development --hot ",
+    "build": "webpack --mode production"
+  },
+  "repository": "https://github.com/osuecampus/ph-virtual-classroom.git",
+  "author": "Austin Spaeth <austinspaeth@msn.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
+  },
+  "dependencies": {
+    "aphrodite": "^2.2.3",
+    "react": "^16.5.2",
+    "react-auth": "git+ssh://git@github.com/osuecampus/react-auth.git",
+    "react-dom": "^16.5.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "react-starter": "git+ssh://git@github.com/osuecampus/react-starter.git",
+    "react-transition-group": "^2.5.0",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
+    "uuid": "^3.3.2",
+    "video.js": "^7.2.3",
+    "videojs-youtube": "^2.6.0"
+  }
+}

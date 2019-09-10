@@ -1,0 +1,163 @@
+\documentclass[onecolumn, draftclsnofoot,10pt, compsoc]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{url}
+\usepackage{setspace}
+\usepackage[english]{babel}
+
+\usepackage{geometry}
+\geometry{textheight=9.5in, textwidth=7in}
+
+% 1. Fill in these details
+\def \CapstoneTeamName{		AsyncSync}
+\def \CapstoneTeamNumber{		51}
+\def \GroupMemberOne{			Christopher Pavlovich}
+\def \GroupMemberTwo{			Eli Sandine}
+\def \GroupMemberThree{			Jaehyung You}
+\def \GroupMemberFour{			Yeongae Lee}
+\def \CapstoneProjectName{		Project BoxSand: Shared Whiteboard}
+\def \CapstoneSponsorCompany{	OSU: Physics Department}
+\def \CapstoneSponsorPerson{		Kenneth Walsh}
+
+% 2. Uncomment the appropriate line below so that the document type works
+\def \DocType{	%Problem Statement
+				%Requirements Document
+				%Technology Review
+				%Design Document
+				Progress Report
+				}
+
+\newcommand{\NameSigPair}[1]{\par
+\makebox[2.75in][r]{#1} \hfil 	\makebox[3.25in]{\makebox[2.25in]{\hrulefill} \hfill		\makebox[.75in]{\hrulefill}}
+\par\vspace{-12pt} \textit{\tiny\noindent
+\makebox[2.75in]{} \hfil		\makebox[3.25in]{\makebox[2.25in][r]{Signature} \hfill	\makebox[.75in][r]{Date}}}}
+% 3. If the document is not to be signed, uncomment the RENEWcommand below
+%\renewcommand{\NameSigPair}[1]{#1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{titlepage}
+    \pagenumbering{gobble}
+    \begin{singlespace}
+        \hfill
+        % 4. If you have a logo, use this includegraphics command to put it on the coversheet.
+        %\includegraphics[height=4cm]{CompanyLogo}
+        \par\vspace{.2in}
+        \centering
+        \scshape{
+            \huge CS Capstone \DocType \par
+            {\large\today}\par
+            \vspace{.5in}
+            \textbf{\Huge\CapstoneProjectName}\par
+            \vfill
+            {\large Prepared for}\par
+            \Huge \CapstoneSponsorCompany\par
+            \vspace{5pt}
+            {\Large\NameSigPair{\CapstoneSponsorPerson}\par}
+            {\large Prepared by }\par
+            Group\CapstoneTeamNumber\par
+            % 5. comment out the line below this one if you do not wish to name your team
+            \CapstoneTeamName\par
+            \vspace{5pt}
+            {\Large
+              \NameSigPair{\GroupMemberOne}\par
+              \NameSigPair{\GroupMemberTwo}\par
+              \NameSigPair{\GroupMemberThree}\par
+			  \NameSigPair{\GroupMemberFour}\par
+            }
+            \vspace{20pt}
+        }
+
+        \begin{abstract}
+		The following document details the progress made during Fall term of 2018 by group 51 team AsyncSync. Firstly, the purposes, goals and stretch goals of the project will be discussed. Following that, there will be a brief overview of the system design, and a brief week-by-week summary of the term. Then, a brief summary of the current state of the project is presented. Next, the problems encountered during the term will be discussed accompanied with solutions to the problems. Lastly, the document details a ten week retrospective.
+    \end{abstract}
+    \end{singlespace}
+\end{titlepage}
+\newpage
+\pagenumbering{arabic}
+\tableofcontents
+% 7. uncomment this (if applicable). Consider adding a page break.
+%\listoffigures
+%\listoftables
+%\clearpage
+
+\section{Project Purpose and Goals}
+\subsection{Purpose}
+Our software project, AsyncSync, is a web application being developed for professor Kenneth Walsh, at Oregon State University (OSU). The software is intended to replace the current online homework system for introductory physics students at OSU. The main functionality of the software is a shared online whiteboard that students will use to collaborate on physics problems in real-time. It aims to increase communication and the flow of ideas while learning a difficult subject.
+\subsection{Goals}
+Primarily, the goal of the project is data collection that will be used by researchers at OSU. Every click made, how the site is navigated, time spent on pages, or problems, etc. will be tracked. The data will be used by researchers studying the efficacy of the software and the learning platform being used in introductory physics courses at OSU. Researchers will try to correlate student performance metrics from class and they way in which they interacted with the learning materials and platform. Additionally, we will be integrating a text or video chat client to be used in conjunction with the whiteboard. This is intended to increase the communication between students whilst collaborating on an assignment together.
+\subsection{Stretch Goals}
+Secondarily, our stretch goals include a waiting lobby for users to sync up and collaborate, split out rooms for the E-Campus virtual classroom section of introductory physics. Additionally, creating a database for Walsh’s question bank is another stretch goal for our team.
+
+\section{Week-by-Week Summary}
+\subsection{Weeks One and Two}
+During the first two weeks, the projects were introduced to the class and students voted on projects they wanted to work on.
+\subsection{Week Three}
+Groups were assigned and team members met to exchange ideas about the project, and to get to know each other. During this week, our team wrote the Problem Statement for the project. Also, we met our TA, Wesley for the capstone project.
+\subsection{Week Four}
+In week four, we had the first meeting with our client, Kenneth Walsh and program assistant, Max Moulds. We discussed the main ideas, and purpose of the project. Additionally, Kenneth Walsh gave us a presentation about the project, which gave us historical context and an understanding of the motivation for the project.
+\subsection{Week Five}
+Week five, we attended the second meeting with the program assistant, Max. Inquiries of the technical aspect of the project were made. Also, during this week, we worked on the requirements document draft number one.
+\subsection{Week Six}
+During week six, our group met to discuss the project, and brainstorm for the tech review first draft. Also, each team member wrote individual drafts for the technical review assignment.
+\subsection{Week Seven}
+We met with the client, Kenneth and Max again to discuss the overall design of the program and what to do next. Additionally, we each wrote our individual technical review final drafts, this week. Team members began researching and looking into the technology that will be used to implement the project.
+\subsection{Week Eight}
+The pre-deployment dive continued this week, and more research was done around the technology that would be used such as AWW(whiteboard), docker, web frameworks, etc.. However, there were no meetings, or assignments due because of the holiday.
+\subsection{Week Nine}
+In week nine, we had another meeting with Max to get ideas for the design document, and to clarify some aspects of the project. Our team wrote the design document for the project.
+\subsection{Week Ten}
+Our team met with our TA, Wesley to discuss possible revisions on the Problem Statement assignment. Furthermore, we worked on the progress report document and the presentation as well.
+
+\section{Current State of Project}
+Currently, we are reaching the end of our design phase with AsyncSync and the BoxSand project. With a complete list of requirements, the necessary technology, and an action plan moving forward we will soon begin implementing API calls. As we continue wrapping up design, we are discovering which portions of our project will and will not likely be within reason.
+
+As OSU students, our group has access to and the ability to use Canvas APIs. However, the instructor is the intended user for our data gathering and processing scripts. For this, we intend to use the Flask library of Python. This form of scripting will simplify the code writing process and ease the exporting of user tracking data. The tracking data we are most concerned with includes: the number of times a given user calls each API, which page options are used, at which frequency, and by which user. Further we will be taking screen captures of the whiteboard surface as a session progresses and exporting that data as well.
+
+One of the most restrictive issues we are having is compliance with FERPA regulation. AsyncSync is a web application running within Canvas. We need users to appear to one another anonymously, and we cannot see user data. Therefore, we intend to create false student accounts in our privately hosted instance of Canvas. ­ With this, we will be running test instance of Canvas. This enables us to safely, with permission, login as Professor Walsh. This process is only necessary for data exporting. For scripted test cases, we intend to use the Flask library of Python. This form of scripting will simplify the code writing process and ease the exporting of user tracking data.
+
+\section{Problems We Encountered and Solutions To Those Problems}
+We have faced some problems while working on the project. The first problem lies in communication. We usually have a meeting once a week, and the meeting is important to assess the progress of the project, which helps us to understand and reorganize the project. On one occasion, our TA did not attend the meeting without any prior notifications. Aside from that, we are satisfied with the TA and his feedback. As a solution, we will send out reminders for meetings by email in the future. Also, we experienced difficulties being able to meet with the E-Campus team. We will collaborate with the E-Campus team to get our application working inside of Canvas LMS. A meeting was planned with the E-Campus team this term, however, they were not ready, and the meeting was canceled. We will be contacting them again before winter term, to schedule a meeting for early Winter term.
+
+The next problem relates to security. We will running the whiteboard application inside Canvas, as well as the BoxSand site, so the security system on Canvas will extend to our project as well. The problem begins here. Only OSU students can access Canvas, and login is required, however, BoxSand is an open source program. Therefore, when users try to navigate from BoxSand to Canvas, Canvas does not give them authorization. To solve this problem, specific Canvas courses will be made public, so non-onid users can access to certain courses, but all users will be anonymous. Also, tracking should run locally. We also have a problem with anonymous users. The program cannot display their names because of privacy issues. Therefore, anonymous users will get a random identification number to communicate with other users, and will not be able to see student identities.
+
+
+\section{Retrospective}
+\begin{tabular}{ | p{0.3\linewidth} | p{0.3\linewidth} | p{0.3\linewidth} | }
+\hline
+Positives & Deltas & Actions \\ \hline
+        AWW’s (A Web Whiteboard) API is very easy to use, and it already has many features we will need
+     &  The chatting and tracking systems will be added functionality to the AWW whiteboard. We might use the text chat system included with AWW, or create our own to handle video chatting.
+     &  We have to talk with our client for paying the premium features, that includes essential feature, like a chatting system and a sharing whiteboard. \\ \hline
+     Max helps us with technological decisions, and problems. Because of his technical background, he helps the client communicate his ideas to us in a way we better understand
+     &
+     N/A
+     &
+     N/A    \\ \hline
+     Because our application will run inside of Canvas, the E-campus team provides security to our application. Also they are FERPA compliant, so it saves us from having to deal with FERPA regulations.
+     &
+     We have yet to meet with the E-Campus team. Because they have handled the security, it does not provide us the opportunity to learn how to implement this functionality.
+     &
+     Schedule a meeting with Max and the E-Campus team early next term. We can be briefed on how a process like this works to gain some understanding of it. \\  \hline
+     By creating this free to use software, we will hopefully reduce costs for future introductory physics students
+     &
+     Students may need time to get used to using new system, but it wouldn’t take a long time.
+     &
+     N/A
+     \\ \hline
+     Our team worked well together and we were able to get a comfortable work flow among the group
+     &
+     We could have met in person more often while working on assignments to increase the quality of our work
+     &
+     Scheduling more in-person meetings and doing paired programming next term
+     \\ \hline
+     Our team is excited about this project, and our client is as well, which motivates us
+     &
+     It is a large project with lots of moving parts so it could be more difficult than we imagine
+     &
+     Continued research to help us improve our understanding of the project will help keep us motivated. \\ \hline
+
+\end{tabular}
+
+\end{document}
+\textsl{}

@@ -1,0 +1,7 @@
+// EXPORTED CONSTANTS //
+export const SET_USER = "SET_USER";
+export const LOBBY_VIEW = "LOBBY_VIEW";
+export const LOAD_SESSIONS = "LOAD_SESSIONS";
+export const LOAD_CLASSROOM = "LOAD_CLASSROOM";
+export const TOGGLE_VIDEO_CHAT = "TOGGLE_VIDEO_CHAT";
+export const TOGGLE_MODAL = "TOGGLE_MODAL";

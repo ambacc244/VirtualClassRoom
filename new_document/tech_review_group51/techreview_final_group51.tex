@@ -1,0 +1,266 @@
+\documentclass[10pt]{article}
+
+\usepackage{titlesec}
+\usepackage[singlespacing]{setspace}
+\usepackage[letterpaper,margin=0.75in]{geometry}
+
+\setcounter{tocdepth}{4}
+
+
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\fancyfoot[C]{Page \thepage\ of \pageref{LastPage}}
+
+\usepackage{listings}
+\usepackage{color}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=mystyle}
+\begin{document}
+\begin{titlepage}
+    \title{Tech Review}
+    \author{Yeongae Lee, Jaehyung You \\ CS 463  \\ Oregon State University \\ Spring 2019 \\ \\ Project Physics Virtual Classroom: AsyncSync (Group 51) \\by Physics Department \\Dr. Kenneth Walsh}
+    \date {June 10, 2019}
+
+  
+    \maketitle
+        \begin{abstract}
+            Our project`’s final goal is developing a fully functional online website that has a shared whiteboard for educational purposes. The application requires all feature of the online shared whiteboard, a voice or a regular chatting system, and a tracking system for students’ work. Fortunately, there are already a number of tools to implement these required features. We will compare the tools already developed for the online whiteboard and look at their advantages. For tracking system requires for using database, because we need to store their work so that the professor can take a look into it.  However, since the method how the data type would be hasn`’t defined yet, we will explore the capabilities of various databases and cloud-based system. Lastly, the program requires a real-time chatting system. So, the system will use the technology, which is called `‘WebSocket`’. This will enable to chat with others through the web with low latency. Many of the details of the project are still undetermined, so our team will have think about the various options for the future. Moreover, we need to find a proper Front-end framework so that we can build the website for the right purposes. This document will focus on building the whiteboard from nothing. We would end up with using other whiteboard`'s APIs, but this reviewing work will help us to understand well how we can actually implement it. 
+        \end{abstract}     
+\end{titlepage}
+\maketitle
+
+\section{Yeongae Lee's Tech Review}
+        \subsection{Introduction}
+            The purpose of the whiteboard program is to allow students to collaborate their work with other students. Collaboration with peers will allow students to learn about various ways to solve problems. AsyncSync’s client expects an executable whiteboard program in the real world, hence it should work well on the existing BoxSand webpage. Furthermore, we are also looking to implement it on the Canvas website. Our client expects this program to save students the cost of paying for private programs such as Mastering Physics, therefore we also considered cost while designing it. Before designing the program, coders have to search for most suitable and effective softwares that fits the purpose of our intended program. Hence, my role will be to search for the most fitting technologies and software in terms of purpose, quality and cost. Competitive softwares have both strong and weak points, so this paper will introduce the advantages and disadvantages of diverse whiteboard programs, front-end frameworks and chat clients. 
+        
+        \subsubsection{Whiteboard}
+            Implementing whiteboard on the BoxSand website is our main goal of the project. In order to do so, we must carefully identify the conditions of an effective whiteboard tool. First, our goal is to minimize cost so we have to consider the price to implement the whiteboard function on the BoxSand website. Secondly, functions of whiteboard should be taken into account. If the purpose of a whiteboard is to just share solutions, it does not need to provide complicated drawing tools. Too many unnecessary functions might give a bad impression on users, deeming it not user-friendly. Finally, the qualities of whiteboards should be taken into consideration. Whether the functions perform effectively is the most important factor. We have to test the program functionality on various platforms such as laptops, tablets, Windows, and Mac. \cite{Online Whiteboards}
+        
+            \paragraph{AWW App}
+                In my research on whiteboard programs out there, I found that AWW App is faithful to the basic functions. It allows more than one user to work on a board and contains the AWW board with a dot grid, which helps to align pictures and text. AWW has similar functions in comparison to Whiteboard Fox, which will be introduced next but it is visually more appealing than that of Whiteboard Fox. The AWW App provides basic drawing tools such as drawing, eraser and copy and paste functions. One disadvantage of AWW is that it lacks sophisticated tools. If a client wants more advanced collaboration, it might be not sufficient. According to the official AWW website, it has a free version. However, it is only for the individual users without the collaborative function. Aside from the free version, AWW App also provides an organization and a custom version, which will be our focus as they contain the collaborative functions. These are priced at \$ 3.24 per year which is used for educational purposes which aligns with our goal. However, as we have to implement it on the BoxSand website, a custom or organization version would be more appropriate. To be sure, it would be best to contact them and ask for their opinion on which is a better option for our project. \cite{AWW APP Price}
+                
+            \paragraph{Whiteboard Fox}
+                Looking at the second whiteboard program, Whiteboard Fox is a simple and fast virtual whiteboard as it does not require setup or installation to run the program. It is similar to the AWW App in terms of the simplicity of the drawing tools. The only difference is that Whiteboard Fox has a copy all feature that allows users to copy all drawings to the clipboard at once. In terms of features, there are not plenty but it is still a popular online whiteboard because of its fast Syncing and simple usage. The biggest strength of Whiteboard Fox is that it instantly shows all the changes on the right side of the screen in real-time. To add on to that, it is also a tablet-friendly software. The price description is not found on the webpage, so it is questionable whether they will allow us to use the software for our BoxSand project. Hence, we would have to contact them for more assistance. 
+         
+            \paragraph{RealTime Board}
+                In contrast with the previous two whiteboard programs, RealTime Board is a much higher-level whiteboard. It supports various collaboration works, provides basic drawing tools and enables cloud network collaboration. Furthermore, it provides diverse templates; users can create charts, tables, and various note cards. In terms of advantage, the advanced functions are the greatest strength of RealTime Board. For instance, whiteboards can be saved as image, pdf and allows users to save their work on Google drive. Best of all, It has a free version that supports up to a maximum of three members in a board. The price increases if more members would like to be added into the board. We will contact them to inquire more details. \cite{RealTime Board Price}
+                
+            \begin{tabular}{ | p{0.2\linewidth} | p{0.2\linewidth} | p{0.2\linewidth} | p{0.2\linewidth} | } \hline
+                 & AWW & Whiteboard Fox & RealTime Board \\ \hline
+                Cost & Educational version & No information & Average \\ \hline
+                Functions & Basic drawing tools & Basic drawing tools & Basic drawing tools Template \\ \hline
+                Platform & Windows, Mac & Windows, Mac & Windows, Mac \\ \hline
+            \end{tabular}
+        
+        \subsection{Front-end Framework}
+            There are a few aspects to consider in choosing a front-end framework. First, coders’ ability is important. Novice coders are better at deciding frameworks which provide many useful widgets and templates as they only require minimum coding skills. Secondly, users have to take into account the expected outcome appearance in different platforms. Frameworks are different depending on platform. If coders want to develop a unique website outside of normal standards, it would be helpful for them to choose a front-end framework which supports high level customizing. Finally, coders have to consider provided CSS preprocessors. Different front-end frameworks provide different CSS frameworks. It is better to decide a front-end framework which provides CSS preprocessors which we are comfortable with. \cite{Front-end Frameworks}
+        
+        
+            \paragraph{Bootstrap}
+                Bootstrap is the most widely used open source front-end framework. Bootstrap includes HTML, CSS, JavaScript and JS. It supports both LESS and Sass CSS framework. It is a framework that complies with responsive web design standards, so this is suitable with all different sizes and complexities of web development. Bootstrap provides consistent results between browsers, allowing end results to look the same on provided platforms and browsers. Bootstrap is one the most popular framework, so it is frequently updated and new features are frequently added to it. Moreover, Bootstrap supports the latest versions of Chrome, Firefox, Internet Explorer, Opera, and Safari. Despite the many advantages, it is not compatible with all coders. For example, Bootstrap contains a customary framework, so coders who wishes to deviate from standards have to spend much time on coding. Bootstrap websites also follow standard templates. Therefore, most websites which are built with Bootstrap might look similar to each other. Lastly, Bootstrap includes a lot of excessive tools which are not frequently used, slowing down the loading speed. 
+                
+            \paragraph{Foundation}
+                Foundation is a high-level open source framework. It provides Sass CSS preprocessor. It is an ideal front-end framework for responsive website development. It is a framework which requires high customization ability, so this framework is often used to build unique websites that do not get stuck in a rut. Foundation also has a strong flexible grid system like Bootstrap. What stands out when comparing it to other frameworks is that style classes are already included, so it does not need to include classes on the code, preventing the size of the CSS file from being lengthened. However, foundation’s advantage can be its disadvantage as customization could be a complex process for beginners, it could take extra effort and time for them to lean it. 
+         
+            \paragraph{Semantic-UI}
+                Semantic-UI is also one of the often-used open source front-end framework which supports LESS preprocessor. Similar to Foundation, customization ability is also required. The strongest point of Sematic-UI is that it is well arranged with Each component configured with its own file, thus allowing users to easily load components and reduces file size and loading time. Semantic-UI is appropriate for modern elegant design websites. Disadvantages of Semantic-UI is that it utilizes JavaScript customization solution, so Semantic-UI users have to familiarize with JavaScript beforehand. Aside from that, it provides fewer classes than Bootstrap and Foundation. 
+        
+        \subsection{Chat Client}
+            Communication in a group is important for collaborative assignments and Chat Client is a method to allow that. Our primary purpose is to implement a whiteboard function on the BoxSand website. For that, we have to consider features of chat software. A client’s opinion is important to decide on a chat software. It depends on the preference of a client to decide on a chat software that supports either basic chat functions or one that provides more ancillary features. Programs that provide additional functions are normally more expensive than the ones with basic functions. So, cost should be allocated depending on the need of additional functions or not.
+        
+            \paragraph{Slack}
+                Slack is a chat program that already forms a lot of users. 77\% of the Fortune 100 uses Slack. Slack has aribnb, Target, trivago, CapitalOne as clients. Among the programs which will be introduced from now on, only Slack has a free version. Slack provides Cloud, Windows, and Mac OS platform. Slack does not include advanced features such as Geo-targeting, offline form, screen sharing but it is fast. Even if it accommodates multiple users on one channel, it does not have running slow problem. Simple and fast is the greatest strength of Slack. 
+                
+            \paragraph{Chatwing}
+                Chatwing is a Live chat platform widely used on websites and mobile devices, providing to more than 3 million websites worldwide. In terms of functionality, users can add chat boxes and widgets on their websites and allows users to easily customize the chat box design, allowing a smooth integration with user websites. Lastly, it also supports Windows, Mac OS, iOS, and Android operating systems. According to the official website, the price is \$250 per month for enterprise use. \cite{Chatwing Price} 
+         
+             \paragraph{LiveAgent}
+                LiveAgent is a popular live chat software popular amongst big companies such as BMW, Yamaha, Huawei, and Orange. LiveAgent provides more diverse features than Slack, having more than 170 features. Besides that, it is easy to use and has a user-friendly interface. In terms of disadvantage, it only works on the cloud platform and lack customization settings, so It can be difficult to set up CSS that works well with a website. In terms of price, it is \$39 a month based on the official site but the detailed price can be known by contacting them. \cite{LiveAgent Price}
+            
+            \begin{tabular}{ | p{0.2\linewidth} | p{0.2\linewidth} | p{0.2\linewidth} | p{0.2\linewidth} | } \hline
+                 & Slack & Chatwing & LiveAgent \\ \hline
+                Cost & Average low & Average & Average high \\ \hline
+                Free Version & Yes & No & No \\ \hline
+                Platform & Windows, Mac, Cloud & Windows, Mac & Windows, Mac, Cloud \\ \hline
+                Customization & Average & Average & Average low \\ \hline
+            \end{tabular}
+         
+        \subsection{Conclusion} 
+            To conclude, our BoxSand project aims to implement a real-time collaboration software. Students will be able to learn various ways to solve problems by collaborating with peers. Our team considers various technical components such as whiteboard programs, front-end frameworks and chat clients. We will also compare the features of the programs such as quality and price and select the one that work best for us. BoxSand is a new style of the education program which will replace the online physics assignment system. Our project goal is to improve student learning efficiency while conserving their budget.
+
+    \clearpage
+    \section{Jaehyung You's Tech Review}
+        \subsection{Whiteboard}
+            The whiteboard is going to be a main part of the project. The problem of many whiteboard, which are currently in use, is the general-purpose use rather than the educational purpose. Our goal is to enable all students to use the many online shared whiteboard features that are currently available only by paid. Our team will try to implement all the necessary features of the shared whiteboard for educational purposes, but we will keep everything simple and intuitive for every student, who is going to use. In this review, I’ll focus on reviewing the overall functionality, because the details of our project may change as the project progresses.
+            
+            \paragraph{AWW Whiteboard}
+                AWW, which stands for A Web Whiteboard, this whiteboard system shows many of the features of the online shared whiteboard, that is going be developed by our team. It also has the feature that anyone can invite other people to edit or view the whiteboard, so they can increase their productivity. However, the biggest problem of this application is many essential features are not free, which could be useful for students for collaborating their work. This means the user could see some commercial advertisements on the board, which is not good for educational purposes. Nevertheless, the application provides an intuitive and easy-to-use API, which would be very helpful for future progress. More interesting feature of the application is that the user can have the unlimited online white-board. It means the whiteboard can’t run out of space. This feature will give a high productivity for several people working on a small screen. \cite{AWW}
+        
+            \paragraph{Tutorialspoint Online Whiteboard}
+                 This system shows almost final appearance of the project we are aiming for. The application gives users many features without showing advertisements and requiring any kinds of payments. The best feature when compared to other applications, it has more educational features. First, the process or method of inviting other users to your workspace is very simple and convenient. Even it has a voice chatting and a regular chatting system, so it helps to keep everything going smoothly in the way they want. It also has a tutoring system, which is one of the features we want to make it eventually, so any users can get help from the other users or tutors. However, this application only allows few colors to draw, which isn’t ideal while several different students are working in the same workspace. It may bring confusion to other students unless the program indicates who draws what. Still, this program will be able to give us a good direction in making our project. \cite{TW}
+        
+            \paragraph{Ziteboard}
+                This system has most main features for the online shared whiteboard, like the above. However, this system has a more diversity and productivity feature that is a sticky note. From time to time, many users want to leave a mark that indicates what the user really means. So, this feature could be very helpful while students are working with a difficult equation or something is not clear. Compared to the other two application, this one has more faster switching jobs. For example, if the user wants to move the board while he/she is drawing, the user simply use a scroll and move the board. Afterwards, the user can draw simply by double-clicking the board. This kind of feature will increase student’s work efficiency. \cite{Zite}
+        
+            \paragraph{Summary}
+                Those whiteboards, which are already developed online, are great example that we are aiming for our project. In the meanwhile, they still have some unnecessary features that isn’t good for educational purposes. So, our team should only take good advantage from those, and we have to make sure that there is any inconveniences for students to work.
+
+                \begin{center}
+                \begin{tabular}{ |c|c|c|c| } \hline
+                     Options & Advantage & Disadvantage & Note \\ 
+                     AWW & Simple API for using, Core features for sharing & Pay for using all features & \$7.5/mo per 10users  \\ 
+                     Tutorialspoint & Free, Simple Appearance & Lack of tools for drawing & API not provided\\ 
+                     Ziteboard & Productivity features & Pay for using all features & -\\ 
+                     \hline
+                \end{tabular}
+                \end{center}
+        
+        \subsection{Database/Cloud-based System}
+            Database is good way to store data, which is a tracking information of students’ work. As one of our requirements of this project is having a tracking system of students’ work so that they can have a reasonable grade, or the professor can give them a feedback. Since the method of storing students’ work isn’t defined yet, the type of databases (or DBMS) will be differed as the project progresses. It would be better to use cloud-based database, since we will store pictures or videos of students’ work.
+        
+            \paragraph{MongoDB}
+                First, MongoDB is an open-source database, and it is developed in C++. It shows a great scalability and performance, it is a Document-Oriented database system. It supports fully indexing, so it could be a good choice if we are going to store tracked students’ work as an image. This is because it has a great performance on reading and writing data, so it can handle a big caching or huge traffic of data. Why the reason for MongoDB isn’t good for storing a video is that it only allows only small amount of size of the data. So, if we are going to store a lot of images or a video, MongoDB wouldn’t be ideal. Moreover, it is also a memory mapped file, which is a database using a file engine, so every memory managing is by the operating system we use. Therefore, the performance, that we expect, can’t meet our expectation if our system isn’t good enough. However, depending on how we store the data, MongoDB can be a good choice. \cite{mongo}
+        
+            \paragraph{Microsoft Azure}
+                It is more like cloud-based system rather than the traditional database. However, it could be a great choice if the tracking file is going to be an image or a video. Since the size of those data will be tremendous, Azure can handle the process faster than any other database managing system (DBMS). Especially, for data storage, there is a service which is called “Blob Storage”. It is a REST-based object storage for unstructured data. Moreover, it could easily connect to the other database system, so managing the data is more efficient and convenient. However, if the data gets larger, the pricing point would be going higher, which isn’t good for the client and us. For this reason, it will be necessary to manage and erase the data at regular intervals of time. \cite{azure}
+        
+            \paragraph{MySQL}
+                This is the most common-use database in the world. It is a relational database system, and it also allows multi-users and multi-threads. Most importantly, it gives the user various API for C, C++, Java, PHP, and etc. It is also free to use, because it is from an open-source library. Moreover, it uses the standard SQL form, so every team member can use MySQL without any prior knowledge of it. So, if we are going to store the data by a different format than images or videos, MySQL is good choice to go. This is because it is simple and fast enough to handle a huge data. However, it isn’t easy to change particular data model because the data table is less flexible than other data base system, like MongoDB. However, it still has a great performance and secure features, so it can be a good choice depending how the data will be stored. \cite{mysql}
+        
+            \paragraph{Summary}
+                There are tons of database/cloud-based on the market, but finding a right database isn’t easy step for every project. Since we haven’t figured out how the tracking data would look like, the choice of database would be differed at any point. However, we should be aware of the advantages or disadvantages of these database system or cloud-based system, so we can progress our project more smoothly and flexibly.
+
+                \begin{center}
+                \begin{tabular}{ |c|c|c|c| } \hline
+                     Options & Advantage & Disadvantage & Note \\ 
+                     MongoDB & Great performance for reading and writing & Not good for handling many images and videos & - \\ 
+                     Microsoft Azure & Good for handling many images and videos & Pricing point would be high & -\\ 
+                     MySQL & Easy to use and handle the data & Not good for handling many images and video & -\\ 
+                     \hline
+                \end{tabular}
+                \end{center}
+        
+        \subsection{WebSocket}
+            WebSocket is a communication protocol by using one of the TCP connection. In other words, there will be a continuous connection between the web browser and the server by WebSocket. It means that a persistent connection is established between the client and the server, so both can send data at any time. This feature will be required our project, since we are going to use a chatting system or a voice chatting system on the whiteboard. Those chatting systems requires an immediate connection and response. Therefore, WebSocket is a great choice for those system. Since the specifications of this WebSocket are internationally uniform, we will look at how we will implement this feature by languages.
+        
+            \paragraph{Socket.io}
+                Socket.io is developed by NodeJS. It is the most basic way to implement WebSocket. It requires npm (Node Package Manager). More precisely, Socket.io aims for developing a real-time chatting system by using WebSocket. This is one of great tools that has been optimized to develop the real-time chatting system. Most importantly, this will enable all the browser, which doesn’t support WebSocket, to be able to use WebSocket feature. For example, most browsers, nowadays, support WebSocket, but IE only supports it after its version 10. \cite{si}
+            
+            \paragraph{Flask-SocketIO }
+                Flask-SocketIO is a flask application that access to low latency communications between the clients-side and the server-side. The flask is a micro web framework in Python. This micro web framework includes many advantages, because it doesn’t require specific tools or libraries. Which means, it could be implemented any kind of developing environment. Since Flask-SocketIO can allow that the client-side application can use any of the original Socket.io libraries in many languages, it may able to give us a bit more diversity for developing options to our project. This scalability of Flask-SocketIO will help us as the project progresses \cite{fs}
+            
+            \paragraph{ws}
+                It is another a popular WebSocket library for JavaScript, especially Node.js. It also helps to manage connections under the WebSocket Protocol. Since Socket.io is much easier to use for developing a real-time chatting system, this one doesn’t seem to have any advantage to use. However, Socket.io is more focused on the real-time chatting system, while this one has more focused to the basic role of connecting client side and server side. It is also very simple to use and fast enough to implement the real-time chatting system. Socket.io is enough to develop the chatting system, however we could need to know this library in case we need to add more feature, which needs the connection between the client-side and the server-side, rather than just having a real-time chatting system. \cite{ws}
+            
+            \paragraph{Summary}
+                WebSocket is a great tool for implementing the real-time chatting system. Like Socket.io, there is an already great library to use.  These WebSocket technologies play a crucial role in the workspace of students, because they need to go in the right direction of the right answer with immediate feedback from other students. Since what chatting system will be implemented on the whiteboard hasn’t decided yet, those options will be important choices in the future.
+
+                \begin{center}
+                \begin{tabular}{ |c|c|c|c| } \hline
+                     Options & Advantage & Disadvantage & Note \\ 
+                     Socket.io & Easy to use, great for the real-time chat system & - & Implementing voice \\ 
+                     & & & chatting is tricky\\ 
+                     Flask-Socket.io & Flexible on any developing environments & Except that, Socket.io is& -\\ 
+                     &&better and easy to implement&\\
+                     ws & Better library for connection between & Not easy as Socket.io  & It is running under\\ 
+                     &Client and Server& & WebSocket protocol\\
+                     \hline
+                \end{tabular}
+                \end{center}
+              
+              \clearpage  
+\begin{thebibliography}{9}
+
+\bibitem{AWW} 
+AWW App. Online Whiteboard for Realtime Visual Collaboration
+\\\texttt{https://awwapp.com/}
+
+\bibitem{AWW APP Price}
+AWW App. Pricing
+\\\texttt{https://awwapp.com/pricing/}
+
+\bibitem{Chatwing Price}
+Chatwing. Pricing
+\\\texttt{https://chatwing.com/site/pricing}
+
+\bibitem{fs} 
+Flask-SocketIO
+\\\texttt{https://flask-socketio.readthedocs.io/en/latest/}
+
+\bibitem{Front-end Frameworks}
+Ivaylo Gerchev. The 5 Most Popular Front-end Frameworks Compared
+\\\texttt{https://www.sitepoint.com/most-popular-frontend-frameworks-compared/}
+
+\bibitem{LiveAgent Price}
+LiveAgent. Pricing
+\\\texttt{https://www.ladesk.com/pricing/}
+
+\bibitem{Online Whiteboards}
+Matt Grech. The 10 Best Online Whiteboards with Realtime Collaboration
+\\\texttt{https://getvoip.com/blog/2016/09/14/online-whiteboard-collaboration/}
+
+\bibitem{azure} 
+Microsoft Azure Cloud Computing Platform \& Services
+\\\texttt{https://azure.microsoft.com/en-us/)}
+
+\bibitem{mongo} 
+MongoDB: Open Source Document Database
+\\\texttt{https://www.mongodb.com}
+
+\bibitem{mysql} 
+MySQL
+\\\texttt{https://www.mysql.com/)}
+
+\bibitem{RealTime Board Price}
+RealTime Board. Choose your plan
+\\\texttt{Retrieved from https://realtimeboard.com/pricing/}
+
+\bibitem{si} 
+Socket.io
+\\\texttt{https://socket.io/}
+
+\bibitem{TW} 
+Tutorials Point - Online Free Whiteboard
+\\\texttt{https://www.tutorialspoint.com/}
+
+\bibitem{ws} 
+ws - npm
+\\\texttt{https://www.npmjs.com/package/ws}
+
+\bibitem{Zite} 
+Ziteboard | Online Whiteboard with Realtime Collaboration
+\\\texttt{https://ziteboard.com/}
+
+\end{thebibliography}
+
+\end{document}
+

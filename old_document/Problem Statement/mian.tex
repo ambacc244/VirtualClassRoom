@@ -1,0 +1,104 @@
+\documentclass[onecolumn, draftclsnofoot,10pt, compsoc]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{setspace}
+
+\usepackage{geometry}
+\geometry{textheight=9.5in, textwidth=7in}
+
+% 1. Fill in these details
+\def \CapstoneTeamName{		AsyncSync Whiteboard}
+\def \CapstoneTeamNumber{		51}
+\def \GroupMemberOne{			Christopher Pavlovich}
+\def \GroupMemberTwo{			Eli Sandine}
+\def \GroupMemberThree{			Jaehyung You}
+\def \GroupMemberFour{			Yeongae Lee}
+\def \CapstoneProjectName{		Project BoxSand: Asynchronized Synchronization: Shared Whiteboard}
+\def \CapstoneSponsorCompany{	OSU: Physics Department}
+\def \CapstoneSponsorPerson{		Kenneth Walsh}
+
+% 2. Uncomment the appropriate line below so that the document type works
+\def \DocType{		Problem Statement
+				%Requirements Document
+				%Technology Review
+				%Design Document
+				%Progress Report
+				}
+
+\newcommand{\NameSigPair}[1]{\par
+\makebox[2.75in][r]{#1} \hfil 	\makebox[3.25in]{\makebox[2.25in]{\hrulefill} \hfill		\makebox[.75in]{\hrulefill}}
+\par\vspace{-12pt} \textit{\tiny\noindent
+\makebox[2.75in]{} \hfil		\makebox[3.25in]{\makebox[2.25in][r]{Signature} \hfill	\makebox[.75in][r]{Date}}}}
+% 3. If the document is not to be signed, uncomment the RENEWcommand below
+%\renewcommand{\NameSigPair}[1]{#1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\begin{titlepage}
+    \pagenumbering{gobble}
+    \begin{singlespace}
+        \hfill
+        % 4. If you have a logo, use this includegraphics command to put it on the coversheet.
+        %\includegraphics[height=4cm]{CompanyLogo}
+        \par\vspace{.2in}
+        \centering
+        \scshape{
+            \huge CS Capstone \DocType \par
+            {\large\today}\par
+            \vspace{.5in}
+            \textbf{\Huge\CapstoneProjectName}\par
+            \vfill
+            {\large Prepared for}\par
+            \Huge \CapstoneSponsorCompany\par
+            \vspace{5pt}
+            {\Large\NameSigPair{\CapstoneSponsorPerson}\par}
+            {\large Prepared by }\par
+            Group\CapstoneTeamNumber\par
+            % 5. comment out the line below this one if you do not wish to name your team
+            \CapstoneTeamName\par
+            \vspace{5pt}
+            {\Large
+                \NameSigPair{\GroupMemberOne}\par
+                \NameSigPair{\GroupMemberTwo}\par
+                \NameSigPair{\GroupMemberThree}\par
+			  \NameSigPair{\GroupMemberFour}\par
+            }
+            \vspace{20pt}
+        }
+        \begin{abstract}
+        The essence of our project is to build a set of web-based learning tools for educational use around the world. A great deal of money today goes into research and study materials for both professors and students in higher education. Project BoxSand plans to cut back some of that spending in our own university as it creates highly accessible open source tools for students everywhere. The project has already replaced multiple text books with digital open resources saving students at Oregon State an estimated \$70,000. The current tool in the works named AsyncSync will take these educational gains and financial savings to the next level. Upon completion, Project BoxSand will be equipped with the tools required to draw and write on a whiteboard-like surface. Additionally, there will be a live version of the whiteboard-like surface available to all collaborators on a given project or assignment once they have agreed to sync. They will receive live updates of each other’s pen and keyboard strokes, as well as have the option to communicate more explicitly through a chat client integrated into the application. The real benefit to this type of learning is that it pulls students away from the one-way information stream that is text book and video learning. Studies have shown that students learn a great deal more from hands on learning with peers, where those struggling can learn from the thought process of their peers who understand that section of material. As the software expands, we will be able to see which tools are used and how they are used which will teach us a great deal regarding how the modern student learns.
+       \end{abstract}
+    \end{singlespace}
+\end{titlepage}
+\newpage
+\pagenumbering{arabic}
+%\tableofcontents
+% 7. uncomment this (if applicable). Consider adding a page break.
+%\listoffigures
+%\listoftables
+%\clearpage
+
+\section{Problem Description}
+Though online collaboration tools have been improving over the years, the Physics department at Oregon State University (OSU) heavily utilizes those tools and have found a major flaw. In fact, the average college student spends \$1,200 on textbooks alone per year\cite{costBooks}, not to mention the cost of software. The development of a few web applications can lead to a reduction in the enormous cost students pay to use online learning tools. The web apps that students currently use in the introductory physics courses at OSU do not allow the students to collaborate with one another on their assignments in a real-time group workspace where they can share ideas or work through problems together. The collaboration with students on their work can bring students many benefits. The project is aimed at developing a tool that enables students to collaborate online by using a shared whiteboard. Many online collaboration tools have already been developed, but the project needs to focus on developing tools that will be used for more student-centered and educational-research purposes. To do so, it is necessary to identify and solve the problems.
+
+First, we need to combine all the advantages of tools, which are already exist online. For example, the current tool AWW, which is a shared whiteboard that has already been developed. However, it was created for general purpose use, and not for educational use at a University. Since the project is for specific students, some functions, or features need to be adjusted accordingly. Furthermore, the current tools do not allow for educational research on the efficacy of learning resources and the online software itself. Secondly, the current tools have many obstacles when communicating with team members, or collaborators. These communication-related issues would be solved by applying a texting or a voice chatting system. It will be a top priority in developing these online collaboration tools. Moreover, we need to consider how far we should define as specific students. In other words, we must think about whether the project is only for physics students. Many students from different majors need tools to collaborate on their work, and those tools need to meet their needs. Lastly, we need to consider how to efficiently manage people. Every time you access the channel, inviting your friends, who want to be worked with, and waiting for them to accept your invitation will be very inefficient and time consuming. The limitation of existing tools is very hard to manage collaborators. However, there are already many programs which support efficient group collaboration in general. For example, Google Docs allows more than one person to edit the document simultaneously. GitHub provides several programmers to add and pull code, allowing for collaboration. Our objective is to implement and develop these tools more efficiently in the form of an online shared whiteboard.
+
+\section{Proposed Solution}
+The solution our team proposes to the previously stated problem is a form of real-time collaborative software, which allows multiple users to collaborate, and communicate with each other in real-time. Our solution will replace traditional online homework learning platforms offered by large publishing companies that students are currently paying to use. Also, the application will provide the client with a way to evaluate data about the use, and effectiveness of the learning platform and the online-resources. This product will be delivered as a web application, which will be open-source, and free to use for introductory physics students at OSU, and possibly students at other Universities. The online application will have similar functionality of Google Docs, in terms of allowing multiple users to edit a single workspace at once, but in the form of a shared whiteboard. Furthermore, it will provide a tool for students to communicate with each other, such as a text, or video chat system.
+
+With this web application, when users sign-in to the current physics homework system (BoxSand) they will be able to enter a lobby, in which other users that are online will be waiting. In this lobby, users will be able to message one another, and ask if anyone wants to work together on a given homework assignment. If the students agree to work together, they will be directed to a shared whiteboard where they can collaborate and communicate via text, or video chat. On the shared whiteboard, the users will be able to draw shapes, objects, equations, and share ideas, facilitating their online learning experience. Although, if students do not wish to enter the lobby, they can work on the assignments alone, and still have access to the whiteboard to enhance their learning experience. However, while a user is working alone, a list of other users that are working on the same problem will be displayed on the screen. These users will have the option to invite one another to work on the problem together. If they accept the invitation, they will be guided to the shared whiteboard, and be able to work together while communicating through text, or video. This solution will require our team to use a variety of tools and methods to create the web application.
+
+Because our team will be creating a web application, JavaScript, along with JavaScript-libraries will be needed to handle all the functionality for the interactive, collaborative work done in the browser. As for the backend, our team will use a framework such as Node.js, or Flask, to write the server-side code for the application. Other tools such as Websockets that allow the work-space to be edited in real-time by all users without any latency will be needed for this project to succeed. Our team will use other tools such as HTML-5, CSS, Now.js, and anything else related to web development that will provide the required functionality to meet the expectations of our client. Additionally, Git and GitHub will be used as the version control system. In the case that the aforementioned tools are not adequate to provide the functionality required for the application to meet the specifications of the client, other tools, and methods will be used to solve any problems we may run into. Slack, the chat application, will be used as our main medium for communication with our team, and the client. Lastly, our team will need to have a way to measure the acceptability of the software, to make sure we create what our client envisions.
+
+
+\section{Performance Metrics}
+The last destination of this project is the development of a free collaborative program which students can use in the real world. We aim to create a workspace for OSU students to collaborate with other students online. The program has two types of modes which are Async and Sync. Students can work on the same problem when they are in Sync mode. Sync mode provides a whiteboard and chat window. The shared whiteboard performs similar work to AWW tool. Students can freely write equations and draw diagrams to solve problems on the whiteboard. It should be fast enough for students to actually use it, so the program needs to update students’ work on the whiteboard quickly without any latency problems. Also, their work should be stored in the database, so there should be no problem of lost. The program also provides a chat window. Students can freely take about problems in a chat window. It performs the same functions as a social networking programs such as Facebook Messenger and Line. It is developed for educational purposes. Therefore, it has a track function that allows instructors to track whether students really work together or not. This program is considered to be free to students. Therefore, open sources will be used to create it. However, if it is impossible to develop the program by only using open sources, we should minimize the cost of developing it. The shared whiteboard should complement the existing BoxSand program. BoxSand is not a project that ends with adding shared whiteboard function. Our client will continue to add new functions, so BoxSand will continue to get diverse features in the future. Therefore, it has to also be able to fit in seamlessly if other features are added later. We can say that our work was accomplished when we developed a program that meets the above conditions. However, it is necessary to check that this program is commensurate with the needs of the client and can bring about the changes that he expects. Therefore, we have to continuous contact with him to track that the project fits with his requirements. The program is expected students to develop their ability to solve problems in a variety of ways by online collaboration. Our ultimate goal is to create a workspace which students can collaborate on assignments together and saves their work in the database.
+
+\begin{thebibliography}{9}
+	\bibitem{costBooks}
+	Average Estimated Undergraduate Budgets, 2018-19
+	\\\texttt{https://trends.collegeboard.org/college-pricing/figures-tables/}
+	\\\texttt{average-estimated-undergraduate-budgets-2018-19\#Key\%20Points}
+\end{thebibliography}
+
+\end{document}

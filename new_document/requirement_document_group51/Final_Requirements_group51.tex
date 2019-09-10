@@ -1,0 +1,149 @@
+\documentclass[10pt]{article}
+
+\usepackage[singlespacing]{setspace}
+\usepackage[letterpaper,margin=0.75in]{geometry}
+
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\fancyfoot[C]{Page \thepage\ of \pageref{LastPage}}
+
+\usepackage{listings}
+\usepackage{color}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=mystyle}
+
+
+
+\begin{document}
+\pagenumbering{gobble}
+\begin{titlepage}
+    \title{Final Requirement Document}
+    \author{Yeongae Lee, Jaehyung You \\ CS 463  \\ Oregon State University \\ Spring 2019 \\ \\ Project Physics Virtual Classroom: AsyncSync (Group 51) \\by Physics Department \\Dr. Kenneth Walsh}
+    \date {April 19, 2019}
+
+  
+    \maketitle
+        \begin{abstract}
+            The project Physics Virtual Classroom aims to build the web page which students can take online lectures. The distinctive difference between this website and other online lecture websites is that it uses live lectures to engage students. With live lectures, students can ask questions and professors can answer questions. In addition, by setting up group activities in the middle of the class, students will be able to develop their ability to solve problems through collaboration. This document describes the requirements for building this website. The ultimate goal of the project is to allow that students can work together and have a better educational environment. 
+        \end{abstract}     
+\end{titlepage}
+\newpage
+
+\pagenumbering{arabic}
+
+\section{Introduction}
+    \subsection{System Purpose}
+        The system is designed to provide online lectures which can communicate with instructors in real time to introductory physics students at Oregon State University(OSU). It is an open source learning platform. The system will allow instructors and professors to continuously adapt learning materials to facilitate the online learning experience for students. Furthermore, another goal is generating data about the learning tools being used, which will allow researchers to study the efficacy of the learning material and the system. Lastly, the system is meant to increase communication, and dialogue between students while learning. This system will give students the option to work on problems simultaneously, share ideas and help one another learn.
+
+    \subsection{System Scope}
+        Our objective is to create a website for Physics students. The website will have features that include the live-session page, where students will take a live lecture, and online-interactive shared whiteboard, which will allow students to collaborate on homework in real-time. It will provide an area in which they can draw shapes, objects, equations, etc., and share ideas to improve the learning experience. Another feature that will be integrated into the whiteboard will be a medium of communication via video or text chat. Since we are only beginning part of the whole project, we have to make this website stable and solid so that the next project teams can continue their own project on this website.
+
+    \subsection{System Overview}
+        When users enter the Physical Virtual Classroom lobby page, they can see the calendar which has the list of lecture schedules. Students can see lecture schedules on the lobby page. The lobby has a chat system, so students can send a message to other people in the lobby. Students can see the lecture video page by clicking the lecture schedule on the calendar. Lecture video page shows lecture title, description, time and video. Students will redirect to the online whiteboard page during a live lecture. Instructors open online group activity every 15 to 20 minutes. Students will redirect to shared whiteboard page for group activity They will work on activity question on the whiteboard page. The whiteboard has shared a work space. Students will be able to communicate with one another, draw shapes, objects, equations, and share ideas. The whiteboard page has a chat system, so students can send a message to people who are in the same whiteboard. Physics virtual Classroom uses live lecture rather than recorded lecture, so students allow asking questions to professors during lectures. In addition, by adding group activities in the middle of the lecture, students can actively participate in lectures.
+
+    \subsection{Definitions}
+        \begin{itemize}
+            \item BoxSand: A website created by the Physics department at Oregon State University to replace textbooks with free learning material.
+            \item OSU: Oregon State University.
+            \item AWW: A Web Whiteboard. We will use this API for the whiteboard-session
+            \item Break-out Session: It’s the session when students work on the whiteboard.
+            \item CMS : Content Management System. This allows the user to create and control the website easily.
+            \item Drupal: One of the types of CMS. Drupal is a free and open-source content management framework written in PHP and distributed under the GNU General Public License. Drupal provides a back-end framework for at least 2.3\% of all web sites worldwide – ranging from personal blogs to corporate, political, and government sites. (From Wikipedia)
+        \end{itemize}
+        
+\section{System Requirements}
+    \subsection{Functional requirements}
+        \subsubsection{Lobby}
+            This lobby feature would display a list of online lectures and help many students work more smoothly and efficiently. Students may see the lobby screen when they first connect. The lobby page has a large calendar with a schedule of lectures. Students can take the lecture they want by clicking on the lecture schedule on the calendar. The website will redirect students to the lecture pages. At the bottom right of the lobby is a chatting window. Students can invite or ask other people to work together on problems they need to solve, or they can see other students who work on the problems while they are working on it.
+            
+            \subsubsection{Lecture}
+                Every single lecture has one lecture page. Instructors can add a lecture on the Physics Virtual Classroom Page. After the instructor adds a lecture, lecture time will be scheduled on the calendar on the lobby. In addition, the lecture page which includes lecture information and video will be created. Students can access to lecture page by clicking lectures on the lobby. The program redirects them to the lecture page. YouTube Live video is used as lecture source. Therefore, students can ask questions to the professor during lectures. In addition, students participate in group activities in the middle of the lectures for more active participation. Students are invited to a shared whiteboard every 15 or 20 minutes of the lecture.  The whiteboard has a drawing, writing and editing tools. They are able to collaborate to solve problems using these tools.
+
+            \subsubsection{Real-time chatting system}
+                A cheat is important as we aim to create a page that allows students to collaborate in real time. For smooth communication during work, a chat will be available while students are taking a lecture. Everything will be done in real time. This function should be stable and immediate. When a new message arrives, the other students should be able to immediately check the messages. They may can open or close the “chatting windows”. 
+
+    \subsection{Usability requirements}
+        \subsubsection{Understand-ability}
+            The software should be easy to learn and remember how to use for users. A user can learn how to use the Physics Virtual Classroom by using the help system. The usage should be simple as users once learn it, they do not need to check it again. The software is simple to navigate through a user-friendly interface and if any guidance or help is ever needed a student can always refer to the helpful tool for extra instructions.
+        
+        \subsubsection{Effect and Efficiency}
+            The software should be appropriate for assignment collaboration. Students have to efficiently use it without unnecessary obstacles. The system will be efficient for students who are learning Physics. The system response to command should be fast enough, so students should not feel uncomfortable sharing their works.
+ 
+        \subsubsection{Error Tolerant}
+            The software aims to minimize error. It has to protect user form errors. When an error occurs, it should process error recovery and handle it without notifying the user. Error recovery should have a minimal or no impact on response speed, so users should not notice delay caused by errors.
+
+    \subsection{Performance requirements}
+        \subsubsection{Latency Requirement (Response Time)}
+            Since it is a real-time shard whiteboard and chatting system, everything needs to be immediate. In other words, all people in the same work space will see the same thing as the other people is drawing or writing on the board. The feature may require a better network connection for users.
+        \subsubsection{Browser compatibility}
+            User, who is going to use the website, may need the latest version of the browser that is currently used. The server will host different layouts of framework. Therefore, users may need compatible browsers to use maximum functionality of the website. 
+            
+
+    \subsection{System security}
+        \subsubsection{Log-in}
+            Users will log in to the website with a username and password combination. Since we hope to make this software available to students outside the university, we do not intend to require ONID logins. However, ONID logins will be acceptable as a username and password combination. A secure database will be necessary to store login keys, we will use a third party service, if available for the sake of security.
+            Since Drupal has already a built-in login service, we must handle the sensitive information right.
+        \subsubsection{Other security concerns}
+            Encryption will play a key role in securing user data and information transfer. Modern web pages rely on HTTPS to encrypt and decrypt their data at either end of a tunnel. Using this protocol we should not need to worry about the interception of user data during transmission. This security features or issues will be handled by other development teams in the Physics department. 
+        
+    \subsection{Information Management}
+        The Physics Virtual Classroom will be connected to a MySQL database. The database stores the lecture contents uploaded by the professors. The lecture title, description, date, and YouTube live video URL are saved on the database. In addition, Drupal stores structure and configuration of the website. Drupal is a useful program for managing data. Drupal does not manage the database by the administrator, but the system manages the data on its own. When the administrator inserts the data, the data is automatically stored in the existing tables. If the input data needs to be stored in a new table, Drupal creates its own table.
+
+    \subsection{Interface}
+        \begin{itemize}
+            \item We will have a website that contains several lectures so that students can take the lectures whenever the lecture is due. There will be a calendar on the main page that shows when the lecture is due, and other important things will be notified on the main page
+            \item On the lecture pages, students will see a list of lectures. Each content has the name of the lecture, a short description, and a date when the lecture is due. Students may be able to take the lectures that the due date is passed.
+            \item Each lecture will have a few break-out sessions. While break-out sessions are on, students will be notified that a new pop-up page will open so they can start working on whiteboards with other students. 
+            \item During they are working on the whiteboard, the whiteboard will allow multiple users to simultaneously edit a single work space. The look be simple with a white backdrop, and there will be a tool bard on the edge of the screen from which users can select different items to perform different actions. For example, a user can select different shapes, lines, or colors to create different objects on the whiteboard. Furthermore, on the interface, there will be different options for users to save, record, and export the work they have done.
+        \end{itemize}
+        
+\newpage    
+    
+\section{Gantt Chart}
+    \begin{figure}[!ht]
+    \centering
+        \includegraphics[width=0.8\textwidth]{{chart}}
+        \caption{Gantt Chart (2018 Fall Term)}
+    \end{figure}
+    
+     \begin{figure}[!ht]
+    \centering
+        \includegraphics[width=0.8\textwidth]{{chart2}}
+        \caption{Gantt Chart (2018 Winter Term)}
+        
+    \end{figure}    \begin{figure}[!ht]
+    \centering
+        \includegraphics[width=1.0\textwidth]{{chart3}}
+        \caption{Gantt Chart (2019 Spring Term)}
+    \end{figure}
+
+\end{document}
