@@ -4,7 +4,7 @@
 This is the project for Senior capstone project in Oregon State University.
 AsyncSync by Physics Department
 
-Link for the website: <http://drupal.maxcasts.com/>
+Link for the website: <http://drupal.maxcasts.com/> (This URL is not available anymore)
 
 ![](pics/main.jpg)
 
@@ -20,7 +20,7 @@ Any other requirement for using Drupal8, refer to the following link [Drupal8](h
 ## Note (You have to read this note before doing further actions)
 
 * The whole code for the current project is under "html" folder
-* You must use 'sqlbackup.sql' file for building the whole website. 
+* You must use 'sqlbackup.sql' file for building the whole website.
 * Documents folder is for all the documentation of the project
 * ph-virtual-classroom is the code we worked on. Now, we don't use the code anymore...
 * The code in this repository only gives you make a simple website. (in 'html' folder)
