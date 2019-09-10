@@ -10,12 +10,20 @@ Link for the website: <http://drupal.maxcasts.com/> (This URL is not available a
 
 
 ## Requirement
-
 >Refer to our [Guide Document](/new_document/guide_documents_group51/guide_doc_group51.pdf) for all detailed installation of our backup Drupal
 
 We are using Drupal8 as our developing environment.
 Any requirement will be installed if you follow the intallation below.
 Any other requirement for using Drupal8, refer to the following link [Drupal8](https://www.drupal.org/docs/8/system-requirements "Drupal8 link title")
+
+
+## Documents
+
+* [Requirements Document](/new_document/requirement_documents_group51/Final_Requirements_group51.pdf)
+* [Tech Review](/new_document/guide_documents_group51/techreview_final_group51.pdf)
+* [Design Document](/new_document/guide_documents_group51/Final_Design_Document_group51.pdf)
+* [Final Document](/new_document/guide_documents_group51/handoff_2019_Group51.pdf)
+
 
 ## Note (You have to read this note before doing further actions)
 
@@ -26,7 +34,9 @@ Any other requirement for using Drupal8, refer to the following link [Drupal8](h
 * The code in this repository only gives you make a simple website. (in 'html' folder)
 * The site can't do any functions without the current server-database. (in 'html' folder)
 
+
 ## Useful Links
+
 * [Drupal8 Download](https://www.drupal.org/download "Drupal8 Download link title")
 * [Install Drupal on MacOS](https://www.youtube.com/watch?v=pOBArJn-tSQ "Install Drupal on MacOS link title")
 * [Install Drupal on Ubuntu18.04](https://www.youtube.com/watch?v=9SEpG0rOs1w "Install Drupal on Ubuntu18.04 link title")
@@ -35,6 +45,7 @@ Any other requirement for using Drupal8, refer to the following link [Drupal8](h
 
 Useful link for MacOS and Windows:
 Download MAMP: [MAMP Download](https://www.mamp.info/en/downloads/ "MAMP Download link title")
+
 
 ## Authors
 
