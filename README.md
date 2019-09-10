@@ -19,10 +19,10 @@ Any other requirement for using Drupal8, refer to the following link [Drupal8](h
 
 ## Documents
 
-* [Requirements Document](/new_document/requirement_documents_group51/Final_Requirements_group51.pdf)
-* [Tech Review](/new_document/guide_documents_group51/techreview_final_group51.pdf)
-* [Design Document](/new_document/guide_documents_group51/Final_Design_Document_group51.pdf)
-* [Final Document](/new_document/guide_documents_group51/handoff_2019_Group51.pdf)
+* [Requirements Document](/new_document/requirement_document_group51/Final_Requirements_group51.pdf)
+* [Tech Review](/new_document/tech_review_group51/techreview_final_group51.pdf)
+* [Design Document](/new_document/design_document_group51/Final_Design_Document_group51.pdf)
+* [Final Document](/new_document/final_documents_group51/handoff_2019_Group51.pdf)
 
 
 ## Note (You have to read this note before doing further actions)
