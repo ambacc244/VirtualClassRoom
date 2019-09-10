@@ -1,4 +1,4 @@
-#CONTENTS OF THIS FILE
+# CONTENTS OF THIS FILE
  * About Drupal
  * Configuration and features
  * Installation profiles
@@ -7,7 +7,7 @@
  * More information
 
 
-#ABOUT DRUPAL
+# ABOUT DRUPAL
 Drupal is an open source content management platform supporting a variety of
 websites ranging from personal weblogs to large community-driven websites. For
 more information, see the Drupal website at https://www.drupal.org, and join
@@ -20,7 +20,7 @@ Legal information about Drupal:
    https://www.drupal.com/trademark
 
 
-#CONFIGURATION AND FEATURES
+# CONFIGURATION AND FEATURES
 Drupal core (what you get when you download and extract a drupal-x.y.tar.gz or
 drupal-x.y.zip file from https://www.drupal.org/project/drupal) has what you
 need to get started with your website. It includes several modules (extensions
@@ -42,7 +42,7 @@ More about configuration:
  * See also: "Developing for Drupal" for writing your own modules, below.
 
 
-#INSTALLATION PROFILES
+# INSTALLATION PROFILES
 Installation profiles define additional steps (such as enabling modules,
 defining content types, etc.) that run after the base installation provided
 by core when Drupal is first installed. There are two basic installation
@@ -68,7 +68,7 @@ More about installation profiles and distributions:
    https://www.drupal.org/docs/8/creating-distributions
 
 
-#APPEARANCE
+# APPEARANCE
 In Drupal, the appearance of your site is set by the theme (themes are
 extensions that set fonts, colors, and layout). Drupal core comes with several
 themes. More themes are available for download, and you can also create your own
@@ -81,7 +81,7 @@ More about themes:
    https://www.drupal.org/docs/8/theming
 
 
-#DEVELOPING FOR DRUPAL
+# DEVELOPING FOR DRUPAL
 Drupal contains an extensive API that allows you to add to and modify the
 functionality of your site. The API consists of "hooks", which allow modules to
 react to system events and customize Drupal's behavior, and functions that
@@ -111,7 +111,7 @@ More about developing:
    https://www.drupal.org/project/examples
 
 
-#MORE INFORMATION
+# MORE INFORMATION
  * See the Drupal.org online documentation:
    https://www.drupal.org/documentation
 
